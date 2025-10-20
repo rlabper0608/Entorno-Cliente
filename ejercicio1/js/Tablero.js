@@ -13,10 +13,10 @@ class Tablero {
 		this.submarino.init(this.size);
 		this.matriz = [];
 		this.crear(this.size);
-        this.meterSubmarino(this.submarino);
+		this.meterSubmarino(this.submarino);
 	}
 
-    // Funcion que me crea un array biodimensional para hacer el tablero de juego
+	// Funcion que me crea un array biodimensional para hacer el tablero de juego
 	crear(size) {
 		for (let i = 0; i < size; i++) {
 			this.matriz[i] = [];
@@ -27,15 +27,18 @@ class Tablero {
 		console.log(this.matriz);
 	}
 
-    meterSubmarino(submarino) {
-        this.x = submarino.getPositionX();
-        this.y = submarino.getPositionY();
-        this.matriz[this.x][this.y] = 1;
-    }
+	meterSubmarino(submarino) {
+		this.x = submarino.getPositionX();
+		this.y = submarino.getPositionY();
+		this.matriz[this.x][this.y] = 1;
+	}
 
-    mover(submarino) {
-        submarino.chooseMove();
-    }
+	mover(submarino) {
+		submarino.chooseMove();
+        this.meterSubmarino(submarino);
+        console.log("movimiento")
+        console.log(this.matriz)
+	}
 
 	comprobar(posicionX, posicionY) {
 		if (posicionX === this.x && posicionY === this.y) {
@@ -44,9 +47,10 @@ class Tablero {
 		} else {
 			document.getElementById("disparo").innerHTML =
 				"Has fallado prueba otra vez";
-                this.mover(this.submarino);
+                this.mover(this.submarino)
 		}
 	}
+
 }
 
 export { Tablero };

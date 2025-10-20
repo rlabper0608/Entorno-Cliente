@@ -11,8 +11,15 @@ const config = {
 const tablero = new Tablero();
 tablero.init(config);
 
-const posicionX = prompt("Valor de X del disparo");
-const posicionY = prompt("Valor de Y del disparo");
+// const posicionX = prompt("Valor de X del disparo");
+// const posicionY = prompt("Valor de Y del disparo");
 
+let posicionX = 6;
+let posicionY = 4
+
+tablero.comprobar(posicionX, posicionY);
+
+posicionX = prompt("Valor de X del disparo");
+posicionY = prompt("Valor de Y del disparo");
 
 tablero.comprobar(posicionX, posicionY);
