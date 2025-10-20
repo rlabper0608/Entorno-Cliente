@@ -34,6 +34,7 @@ class Tablero {
 	}
 
 	mover(submarino) {
+        this.borrar();
 		submarino.chooseMove();
         this.meterSubmarino(submarino);
         console.log("movimiento")
@@ -50,6 +51,12 @@ class Tablero {
                 this.mover(this.submarino)
 		}
 	}
+
+    borrar() {
+        this.x = this.submarino.getPositionX();
+        this.y = this.submarino.getPositionY();
+        this.matriz[this.x][this.y] = 0;
+    }
 
 }
 

@@ -10,6 +10,7 @@ class Submarino {
         this.x = Math.floor(Math.random() * size) ;
         this.y = Math.floor(Math.random() * size);
         document.getElementById("posicion").innerHTML = "Posicion: " + this.x + ", " + this.y;
+        console.log("Posicion inicial:" + this.x + ", " + this.y);
     }
 
     chooseMove() {
