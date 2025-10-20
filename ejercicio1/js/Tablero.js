@@ -11,6 +11,14 @@ class Tablero {
         this.size = config.size;
         this.submarino.init(this.size);
     }
+
+    comprobar() {
+        if(true){
+            document.getElementById("disparo").innerHTML = "Has acertado! Quieres jugar otra vez?"
+        }else{
+            document.getElementById("disparo").innerHTML = "Has fallado prueba otra vez"
+        }
+    }
 }
 
 export {Tablero}
