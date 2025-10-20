@@ -34,16 +34,17 @@ class Tablero {
     }
 
     mover(submarino) {
-        
+
     }
 
-	comprobar() {
-		if (true) {
+	comprobar(posicionX, posicionY) {
+		if (posicionX === this.x && posicionY === this.y) {
 			document.getElementById("disparo").innerHTML =
 				"Has acertado! Quieres jugar otra vez?";
 		} else {
 			document.getElementById("disparo").innerHTML =
 				"Has fallado prueba otra vez";
+                this.mover(this.submarino);
 		}
 	}
 }
