@@ -34,7 +34,7 @@ class Tablero {
     }
 
     mover(submarino) {
-
+        submarino.chooseMove();
     }
 
 	comprobar(posicionX, posicionY) {
