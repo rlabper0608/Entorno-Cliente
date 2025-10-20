@@ -6,13 +6,13 @@ class Submarino {
     }
 
     init(size) {
-        this.x = Math.random * size;
-        this.y = Math.random * size;
+        this.x = Math.floor(Math.random() * size) ;
+        this.y = Math.floor(Math.random() * size);
     }
 
     chooseMove() {
         moves = [moveRight(), moveLeft(), moveUp(), moveDown()];
-        choose = Math.random * moves.length;
+        choose = Math.floor(Math.random * moves.length);
         moves[choose];
     }
 
@@ -48,8 +48,12 @@ class Submarino {
         }
     }
 
-    getPosition() {
-        console.log("Position X is: " + this.x + " Position Y is: " + this.y)
+    getPositionX() {
+        return this.x;
+    }
+
+    getPositionY() {
+        return this.y;
     }
 }
 
