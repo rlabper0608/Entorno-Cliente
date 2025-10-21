@@ -4,9 +4,9 @@ import { Tablero } from "./Tablero.js";
 // const message = prompt("¿De que tamaño quieres crear el tablero?");
 
 const config = {
-    // size: message
-    size: 20
-}
+	// size: message
+	size: 20,
+};
 
 const tablero = new Tablero();
 tablero.init(config);
@@ -15,11 +15,13 @@ tablero.init(config);
 // const posicionY = prompt("Valor de Y del disparo");
 
 let posicionX = 6;
-let posicionY = 4
+let posicionY = 4;
 
-tablero.comprobar(posicionX, posicionY);
+let prueba = tablero.comprobar(posicionX, posicionY);
 
-posicionX = prompt("Valor de X del disparo");
-posicionY = prompt("Valor de Y del disparo");
+do {
+	posicionX = prompt("Valor de X del disparo");
+	posicionY = prompt("Valor de Y del disparo");
+} while (!prueba);
 
 tablero.comprobar(posicionX, posicionY);

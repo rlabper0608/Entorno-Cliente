@@ -34,30 +34,31 @@ class Tablero {
 	}
 
 	mover(submarino) {
-        this.borrar();
+		this.borrar();
 		submarino.chooseMove();
-        this.meterSubmarino(submarino);
-        console.log("movimiento")
-        console.log(this.matriz)
+		this.meterSubmarino(submarino);
+		console.log("movimiento");
+		console.log(this.matriz);
 	}
 
 	comprobar(posicionX, posicionY) {
 		if (posicionX === this.x && posicionY === this.y) {
 			document.getElementById("disparo").innerHTML =
 				"Has acertado! Quieres jugar otra vez?";
+			return true;
 		} else {
 			document.getElementById("disparo").innerHTML =
 				"Has fallado prueba otra vez";
-                this.mover(this.submarino)
+			this.mover(this.submarino);
+			return false;
 		}
 	}
 
-    borrar() {
-        this.x = this.submarino.getPositionX();
-        this.y = this.submarino.getPositionY();
-        this.matriz[this.x][this.y] = 0;
-    }
-
+	borrar() {
+		this.x = this.submarino.getPositionX();
+		this.y = this.submarino.getPositionY();
+		this.matriz[this.x][this.y] = 0;
+	}
 }
 
 export { Tablero };
