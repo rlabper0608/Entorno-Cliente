@@ -26,13 +26,8 @@ boton = document.getElementsById("btn-dispara");
 addEventListener(onclick, boton); {
 	posicionX = prompt("Valor de X del disparo");
 	posicionY = prompt("Valor de Y del disparo");
-<<<<<<< HEAD
     prueba = tablero.comprobar(posicionX, posicionY);
 } while (!prueba);
-=======
-}
 
-
->>>>>>> 414f35580486ee9c1d21daa66404c22f645c9d15
 
 tablero.comprobar(posicionX, posicionY);
