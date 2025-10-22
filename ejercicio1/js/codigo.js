@@ -11,18 +11,28 @@ const config = {
 const tablero = new Tablero();
 tablero.init(config);
 
-// const posicionX = prompt("Valor de X del disparo");
-// const posicionY = prompt("Valor de Y del disparo");
-
 let posicionX = 6;
 let posicionY = 4;
 
 let prueba = false;
 
-do {
+// do {
+// 	posicionX = prompt("Valor de X del disparo");
+// 	posicionY = prompt("Valor de Y del disparo");
+// } while (!prueba);
+
+boton = document.getElementsById("btn-dispara");
+
+addEventListener(onclick, boton); {
 	posicionX = prompt("Valor de X del disparo");
 	posicionY = prompt("Valor de Y del disparo");
+<<<<<<< HEAD
     prueba = tablero.comprobar(posicionX, posicionY);
 } while (!prueba);
+=======
+}
+
+
+>>>>>>> 414f35580486ee9c1d21daa66404c22f645c9d15
 
 tablero.comprobar(posicionX, posicionY);
