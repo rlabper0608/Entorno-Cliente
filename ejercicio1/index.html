@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego Submarino</title>
 </head>
+
 <body>
     <span id="bloque"></span>
     <br>
     <span id="posicion"></span>
-    <!-- <span id="disparo">Dispara</span> -->
-    <button id="btn-disparo">Dispara</button>
-    <button type="reset">Volver a jugar</button>
+    <span id="disparo">Donde quieres disparar?</span>
+    <br>
+    <label for="coordenadaX">CoordenadaX</label>
+    <input type="number" id="coordenadaX" />
+    <br>
+    <label for="coordenadaY">CoordenadaY</label>
+    <input type="number" id="coordenadaY">
+    <button type="submit">Dispara</button>
     <script src="js/codigo.js" type="module"></script>
 </body>
+
 </html>

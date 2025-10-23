@@ -4,8 +4,8 @@ import { Tablero } from "./Tablero.js";
 const message = prompt("¿De que tamaño quieres crear el tablero?");
 
 const config = {
-	size: message
-	// size: 20,
+  size: message,
+  // size: 20,
 };
 
 const tablero = new Tablero();
@@ -16,18 +16,23 @@ let posicionY = 4;
 
 let prueba = false;
 
+posicionX = prompt("Dime la posición de X");
+posicionY = prompt("Dime la posición de Y");
+
+prueba = tablero.comprobar(posicionX, posicionY);
+
+posicionX = document.getElementById("coordenadaX").innerHTML;
+posicionY = document.getElementById("coordenadaY").innerHTML;
+
+console.log("Posicion X: " + posicionX);
+console.log("Posicion Y: " + posicionY);
+
 // do {
-// 	posicionX = prompt("Valor de X del disparo");
-// 	posicionY = prompt("Valor de Y del disparo");
+//   posicionX = document.getElementById("coordenadaX").innerText;
+//   posicionY = document.getElementById("coordenadaY").innerText;
+
+//   console.log("Posicion X " + posicionX);
+//   console.log("Posicion Y " + posicionY);
+
+//   prueba = tablero.comprobar(posicionX, posicionY);
 // } while (!prueba);
-
-boton = document.getElementsById("btn-dispara");
-
-addEventListener(onclick, boton); {
-	posicionX = prompt("Valor de X del disparo");
-	posicionY = prompt("Valor de Y del disparo");
-    prueba = tablero.comprobar(posicionX, posicionY);
-} while (!prueba);
-
-
-tablero.comprobar(posicionX, posicionY);
