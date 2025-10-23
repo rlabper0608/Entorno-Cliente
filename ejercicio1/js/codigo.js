@@ -1,11 +1,11 @@
 import { Tablero } from "./Tablero.js";
 
 // Mensaje sacado por pantalla para que el jugador decida de que tamaño sera el tablero donde jugará
-const message = prompt("¿De que tamaño quieres crear el tablero?");
+// const message = prompt("¿De que tamaño quieres crear el tablero?");
 
 const config = {
-  size: message,
-  // size: 20,
+//   size: message,
+	size: 20,
 };
 
 const tablero = new Tablero();
@@ -14,25 +14,28 @@ tablero.init(config);
 let posicionX = 6;
 let posicionY = 4;
 
-let prueba = false;
+console.log("Disparo")
+console.log("Prueba CoordenadaX " + posicionX + " Coordenada Y: " + posicionY);
 
-posicionX = prompt("Dime la posición de X");
-posicionY = prompt("Dime la posición de Y");
+tablero.comprobar(posicionX, posicionY);
 
-prueba = tablero.comprobar(posicionX, posicionY);
+posicionX = 8;
+posicionY = 9;
 
-posicionX = document.getElementById("coordenadaX").innerHTML;
-posicionY = document.getElementById("coordenadaY").innerHTML;
+console.log("Disparo")
+tablero.comprobar(posicionX, posicionY);
 
-console.log("Posicion X: " + posicionX);
-console.log("Posicion Y: " + posicionY);
 
-// do {
-//   posicionX = document.getElementById("coordenadaX").innerText;
-//   posicionY = document.getElementById("coordenadaY").innerText;
+posicionX = 15;
+posicionY = 2;
 
-//   console.log("Posicion X " + posicionX);
-//   console.log("Posicion Y " + posicionY);
+console.log("Disparo")
+tablero.comprobar(posicionX, posicionY);
 
-//   prueba = tablero.comprobar(posicionX, posicionY);
-// } while (!prueba);
+
+posicionX = 4;
+posicionY = 16;
+
+console.log("Disparo")
+tablero.comprobar(posicionX, posicionY);
+
