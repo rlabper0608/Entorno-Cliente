@@ -11,22 +11,22 @@ class Submarino {
   init(size) {
     this.x = 12;
     this.y = 6;
+
+    // this.x = Math.floor(Math.random() * size);
+    // this.y = Math.floor(Math.random() * size);
+    
   }
 
   mover(listaCeldas) {
     let numRandom = Math.floor(Math.random() * listaCeldas.length);
 
-    console.log("Vecinos " + listaCeldas);
-
     let celda = listaCeldas[numRandom];
 
-    console.log("Celda elegida Posicion X" + celda.x);
-    console.log("Celda elegida Posicion Y" + celda.y);
-
+    celda.valor = 5;
     this.x = celda.x;
-    this.x = celda.y;
+    this.y = celda.y;
 
-    console.log("Posición nueva: " + this.x + this.y);
+    console.log("El submarino se ha movido");
   }
 }
 

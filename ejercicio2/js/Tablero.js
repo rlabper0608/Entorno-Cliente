@@ -31,7 +31,16 @@ class Tablero {
             return true;
         }
         let celda = this.tablero.find((item) =>item.x===this.submarino.x && item.y===this.submarino.y);
+        
+        this.tablero.forEach((item) => {
+            if(item.valor !=0){
+                item.valor -=1;
+                console.log("Valor cambiado");
+            }
+        })
+
         this.submarino.mover(celda.vecinos.filter((item)=>item!=null))
+        
         return false;
 
     }
