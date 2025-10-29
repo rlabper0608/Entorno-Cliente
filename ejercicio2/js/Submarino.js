@@ -18,11 +18,11 @@ class Submarino {
   }
 
   mover(listaCeldas) {
-    let numRandom = Math.floor(Math.random() * listaCeldas.length);
+    let numRandom = Math.floor(Math.random() * listaCeldas.length)-1;
 
     let celda = listaCeldas[numRandom];
 
-    celda.valor = 5;
+    celda.valor = 7;
     this.x = celda.x;
     this.y = celda.y;
 
