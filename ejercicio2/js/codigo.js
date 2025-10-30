@@ -3,7 +3,9 @@ import { UI } from "./ui.js";
 UI.init({
     status: document.getElementById("status"),
     size: document.getElementsByClassName("sizes"),
-    talbe: document.getElementsByClassName("table"),
+    table: document.getElementById("table"),
+    cell: document.getElementById("cell"),
 });
 
 UI.setStatus("Hola")
+UI.duplicate()
