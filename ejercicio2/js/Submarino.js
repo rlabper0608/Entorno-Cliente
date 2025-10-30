@@ -1,5 +1,3 @@
-import { Celda } from "./Celda.js";
-
 class Submarino {
   constructor() {
     this.x = 0;
