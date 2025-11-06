@@ -7,11 +7,11 @@ class Submarino {
   }
 
   init(size) {
-    this.x = 12;
-    this.y = 6;
+    // this.x = 12;
+    // this.y = 6;
 
-    // this.x = Math.floor(Math.random() * size);
-    // this.y = Math.floor(Math.random() * size);
+    this.x = Math.floor(Math.random() * size);
+    this.y = Math.floor(Math.random() * size);
     
   }
 

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <section class="menu">
         <h1>Submarine: The game</h1>
@@ -15,12 +18,15 @@
             <button class="btn" id="hard">Hard</button>
         </div>
     </section>
-    <section id="table">
-        <div id="cell"></div>
-    </section>
+    <div id="tabla">
+        <template id="casilla-template">
+            <div class="casilla"></div>
+        </template>
+    </div>
     <section class="status-game">
         <h1 id="status">Status</h1>
     </section>
-<script src="js/codigo.js" type="module"></script>    
+    <script src="js/codigo.js" type="module"></script>
 </body>
+
 </html>
