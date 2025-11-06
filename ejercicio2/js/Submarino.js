@@ -7,11 +7,11 @@ class Submarino {
   }
 
   init(size) {
-    // this.x = 12;
-    // this.y = 6;
+    this.x = 12;
+    this.y = 6;
 
-    this.x = Math.floor(Math.random() * size);
-    this.y = Math.floor(Math.random() * size);
+    // this.x = Math.floor(Math.random() * size);
+    // this.y = Math.floor(Math.random() * size);
     
   }
 
@@ -20,7 +20,7 @@ class Submarino {
 
     let celda = listaCeldas[numRandom];
 
-    celda.valor = 7;
+    // celda.valor = 7;
     this.x = celda.x;
     this.y = celda.y;
 
