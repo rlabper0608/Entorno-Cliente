@@ -6,13 +6,14 @@ export const UI = {
 	table: null,
 	casilla: null,
 	aux: null,
-    tablero: new Tablero(),
+    tablero: null,
 
 	init(config) {
 		UI.status = config.status,
 		UI.sizes = config.sizes,
 		UI.table = config.table;
 		UI.casilla = config.casilla;
+		UI.tablero = new Tablero();
         UI.tablero.init(config);
 	},
 
