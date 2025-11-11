@@ -46,7 +46,7 @@ class Tablero {
 		//     }
 		// })
 
-		this.submarino.mover(celda.vecinos.filter((item) => item != null));
+		this.Gamesubmarine.move(celda.vecinos.filter((item) => item != null));
 
 		return false;
 	}

@@ -9,11 +9,13 @@ UI.init({
 });
 
 const gameInstance = new GameSubmarine(UI);
-gameInstance.creaGridTemplate(20);
 
-UI.setEvent({
-    btnShot: ['btnShot', ()=> gameInstance.shot()]
-});
+// UI.creaGridTemplate(20);
+
+// UI.setEvent({
+//     // btnShot: ['btnShot', ()=> gameInstance.shot()]
+//     clickCasilla: ['.casilla', ()=> gameInstance.shot(casilla.dataset.fila, casilla.dataset.columna)]
+// });
 
 /* Esto es otra forma, cuidado con la perdida del contexto this.
 /*

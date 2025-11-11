@@ -14,20 +14,21 @@ export const UI = {
         UI.control.size = 20
     },
     setEvent: (domControl) => {
-        document.getElementById(domControl.btnShot[0]).addEventListener('click', ()=>{
-            domControl.btnShot[1]();
-        });
+        // document.getElementById(domControl.clickCasilla[0]).addEventListener('click', ()=>{
+        //     domControl.clickCasilla[1]();
+        // });
     },
     start(game) {
         UI.game = game;
         // Creación del submarino
         UI.game.init(UI.control.size);
         UI.control.status.textContent = "Juego iniciado";
+        this.creaGridTemplate(UI.control.size, game);
     },
     changeStatus(newStatus) {
         UI.control.status.textContent = newStatus;
     }, 
-    creaGridTemplate(total) {
+    creaGridTemplate(total,game) {
 		UI.control.board.style.gridTemplateColumns = `repeat(${total}, 1fr)`;
 		Array.from({ length: total * total }, (_, i) => {
 			const clon = UI.control.template.content.cloneNode(true);
@@ -37,11 +38,11 @@ export const UI = {
 				console.log(
 					`Fila: ${casilla.dataset.fila}, Columna: ${casilla.dataset.columna}`
 				);
-				
+				game.dispara(casilla.dataset.columna, casilla.dataset.fila);
 			});
 			casilla.dataset.fila = Math.floor(i / total);
 			casilla.dataset.columna = i % total;
-			tabla.appendChild(clon);
+			UI.control.board.appendChild(clon);
 		});
 	}
 }
