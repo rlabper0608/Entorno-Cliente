@@ -27,7 +27,7 @@ class Tablero {
 			})
 		);
 		this.tablero = malla.flat();
-		this.submarino.init(this.size);
+		this.Gamesubmarine.init(this.size);
 	}
 
 	dispara(x, y) {
@@ -50,5 +50,7 @@ class Tablero {
 
 		return false;
 	}
+
+	
 }
 export { Tablero };
