@@ -20,10 +20,10 @@ export const UI = {
     },
     start(game) {
         UI.game = game;
-        // Creación del submarino
-        UI.game.init(UI.control.size);
+        
         UI.control.status.textContent = "Juego iniciado";
         this.creaGridTemplate(UI.control.size, game);
+        // Creación del submarino
     },
     changeStatus(newStatus) {
         UI.control.status.textContent = newStatus;
