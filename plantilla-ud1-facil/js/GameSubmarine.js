@@ -2,8 +2,6 @@ import { Submarino } from "./Submarino.js";
 import { Tablero } from "./Tablero.js";
 
 export class GameSubmarine {
-        x = 0;
-        y= 0;
         tablero = null;
 		array = null;
 
@@ -17,10 +15,8 @@ export class GameSubmarine {
     }
 
 	creaTablero() {
-		;
-		console.log("hola")
 		this.array = this.tablero.init(this.UIControl.control.size);
-		console.log(this.array)
+		console.log("Malla creada")
 	}
 
 	dispara(disparoX, disparoY) {
@@ -31,15 +27,12 @@ export class GameSubmarine {
 			return true;
 		}
 
-		console.log(this.tablero);
-
 		// Esto encuentra la celda donde esta el submarino
-		let celdaSubmarino = this.tablero.find(
-			(item) => item.x === this.x && item.y === this.y
+		let celdaSubmarino = this.array.find(
+			(item) => item.x === this.submarino.x && item.y === this.submarino.y
 		);
 
 		this.submarino.mover(celdaSubmarino.vecinos.filter((item) => item != null));
-
-		return false;
+		this.UIControl.changeStatus("¡Agua!");
 	}
 }

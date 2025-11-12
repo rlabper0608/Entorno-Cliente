@@ -8,11 +8,12 @@ class Tablero {
 	}
 
 	init(config) {
-		this.size = config.size;
+		this.size = config;
 
 		let malla = Array.from({ length: this.size }, (v, i) =>
 			Array.from({ length: this.size }, (v, j) => new Celda(i, j))
 		);
+
 		malla.forEach((item, i) =>
 			item.forEach((celda, j) => {
 				if (i > 0) celda.nuevoVecino(Vecinos.ARRIBA, malla[i - 1][j]);
@@ -23,6 +24,7 @@ class Tablero {
 					celda.nuevoVecino(Vecinos.DERECHA, malla[i][j + 1]);
 			})
 		);
+
 		this.tablero = malla.flat();
 		return this.tablero;
 	}
