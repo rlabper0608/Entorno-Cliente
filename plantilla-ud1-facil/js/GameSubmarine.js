@@ -8,8 +8,10 @@ export class GameSubmarine {
     constructor(UIControl) {
         this.UIControl = UIControl;
         this.UIControl.start(this);
+
 		this.submarino = new Submarino();
 		this.submarino.init(UIControl.control.size);
+
 		this.tablero = new Tablero();
 		this.creaTablero();
     }
@@ -20,8 +22,7 @@ export class GameSubmarine {
 	}
 
 	dispara(disparoX, disparoY) {
-		console.log(this.submarino.x, this.submarino.y);
-		if(this.submarino.x === disparoX && this.submarino.y === disparoY) {
+		if(this.submarino.x == disparoX && this.submarino.y == disparoY) {
             this.UIControl.changeStatus("¡Acertaste!");
 			console.log("Has acertado");
 			return true;

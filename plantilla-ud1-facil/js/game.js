@@ -10,9 +10,6 @@ UI.init({
 
 const gameInstance = new GameSubmarine(UI);
 
-
-// UI.creaGridTemplate(20);
-
 // UI.setEvent({
 //     // btnShot: ['btnShot', ()=> gameInstance.shot()]
 //     clickCasilla: ['.casilla', ()=> gameInstance.shot(casilla.dataset.fila, casilla.dataset.columna)]

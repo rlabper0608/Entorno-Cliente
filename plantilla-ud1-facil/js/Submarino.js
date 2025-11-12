@@ -7,8 +7,9 @@ class Submarino {
 	}
 
 	init(size) {
-		this.x = 0;
-		this.y = 0;
+		this.x = 1;
+		this.y = 1;
+		console.log("Posicion inicial pasada por parametro");
 
 		// this.x = Math.floor(Math.random() * size);
 		// this.y = Math.floor(Math.random() * size);
