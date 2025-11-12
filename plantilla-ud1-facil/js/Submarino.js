@@ -7,8 +7,8 @@ class Submarino {
 	}
 
 	init(size) {
-		this.x = 12;
-		this.y = 6;
+		this.x = 0;
+		this.y = 0;
 
 		// this.x = Math.floor(Math.random() * size);
 		// this.y = Math.floor(Math.random() * size);

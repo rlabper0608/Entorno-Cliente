@@ -11,7 +11,7 @@ export const UI = {
         UI.control.status = document.getElementById(domControl.status);
         UI.control.casilla = document.getElementsByClassName(domControl.casilla)
         UI.control.template = document.getElementById(domControl.template)
-        UI.control.size = 20
+        UI.control.size = 5
     },
     setEvent: (domControl) => {
         // document.getElementById(domControl.clickCasilla[0]).addEventListener('click', ()=>{
@@ -38,7 +38,7 @@ export const UI = {
 				console.log(
 					`Fila: ${casilla.dataset.fila}, Columna: ${casilla.dataset.columna}`
 				);
-				game.dispara(casilla.dataset.columna, casilla.dataset.fila);
+				game.dispara(casilla.dataset.fila, casilla.dataset.columna);
 			});
 			casilla.dataset.fila = Math.floor(i / total);
 			casilla.dataset.columna = i % total;

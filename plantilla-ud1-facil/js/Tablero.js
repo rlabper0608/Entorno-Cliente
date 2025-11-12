@@ -30,27 +30,6 @@ class Tablero {
 		this.Gamesubmarine.init(this.size);
 	}
 
-	dispara(x, y) {
-		if (this.submarino.x === x && this.submarino.y === y) {
-			console.log("Has acertado");
-			return true;
-		}
-		let celda = this.tablero.find(
-			(item) => item.x === this.submarino.x && item.y === this.submarino.y
-		);
-
-		// this.tablero.forEach((item) => {
-		//     if(item.valor !=0){
-		//         item.valor -=1;
-		//         console.log("Valor cambiado");
-		//     }
-		// })
-
-		this.Gamesubmarine.move(celda.vecinos.filter((item) => item != null));
-
-		return false;
-	}
-
 	
 }
 export { Tablero };

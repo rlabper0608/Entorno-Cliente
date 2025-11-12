@@ -1,5 +1,7 @@
 import { Celda } from "./Celda.js";
 import { Vecinos } from "./Celda.js";
+import { Submarino } from "./Submarino.js";
+
 
 export class GameSubmarine {
         x = 0;
@@ -12,11 +14,7 @@ export class GameSubmarine {
     }
 
     init(size) {
-        this.x = 0;
-		this.y = 0;
-
-        // this.x = Math.floor(Math.random() * size);
-		// this.y = Math.floor(Math.random() * size);
+		this.submarino = new Submarino(size);
 
         this.malla(size);
     }
@@ -28,19 +26,19 @@ export class GameSubmarine {
     //     this.UIControl.changeStatus("¡Disparo realizado!");
     // }
 
-    move(listaCeldas) {
-		let numRandom = Math.floor(Math.random() * listaCeldas.length) - 1;
+    // setMove(listaCeldas) {
+	// 	let numRandom = Math.floor(Math.random() * listaCeldas.length) - 1;
 
-		let celda = listaCeldas[numRandom];
+	// 	let celda = listaCeldas[numRandom];
 
-		// celda.valor = 7;
-		this.x = celda.x;
-		this.y = celda.y;
+	// 	// celda.valor = 7;
+	// 	this.x = celda.x;
+	// 	this.y = celda.y;
 
 
-        this.UIControl.changeStatus("¡Agua!");
-		console.log("El submarino se ha movido");
-	}
+    //     this.UIControl.changeStatus("¡Agua!");
+	// 	console.log("El submarino se ha movido");
+	// }
 
     malla(size) {
 		let malla = Array.from({ length: size }, (v, i) =>
@@ -61,23 +59,18 @@ export class GameSubmarine {
 
 	dispara(disparoX, disparoY) {
         
-		if (this.x === disparoX && this.y === disparoY) {
+		if(this.x === disparoX && this.y === disparoY) {
             this.UIControl.changeStatus("¡Acertaste!");
 			console.log("Has acertado");
 			return true;
 		}
+
+		// Esto encuentra la celda donde esta el submarino
 		let celda = this.tablero.find(
 			(item) => item.x === this.x && item.y === this.y
 		);
 
-		// this.tablero.forEach((item) => {
-		//     if(item.valor !=0){
-		//         item.valor -=1;
-		//         console.log("Valor cambiado");
-		//     }
-		// })
-
-		this.move(celda.vecinos.filter((item) => item != null));
+		this.submarino.mover(celda.vecinos.filter((item) => item != null));
 
 		return false;
 	}
