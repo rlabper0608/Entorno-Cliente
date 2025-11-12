@@ -66,11 +66,11 @@ export class GameSubmarine {
 		}
 
 		// Esto encuentra la celda donde esta el submarino
-		let celda = this.tablero.find(
+		let celdaSubmarino = this.tablero.find(
 			(item) => item.x === this.x && item.y === this.y
 		);
 
-		this.submarino.mover(celda.vecinos.filter((item) => item != null));
+		this.submarino.mover(celdaSubmarino.vecinos.filter((item) => item != null));
 
 		return false;
 	}
