@@ -5,7 +5,7 @@ body {
 	font-family: montserrat;
 }
 
-/* .menu {
+.menu {
 	margin-bottom: 2rem;
 
 	h1 {
@@ -15,7 +15,7 @@ body {
 	.sizes {
 		text-align: center;
 	}
-} */
+}
 
 #gameBoard {
 	display: grid;
@@ -23,17 +23,15 @@ body {
 	gap: 2px;
 	background: #fff;
 
-	#casilla-template {
-		.casilla {
-			border: 1px solid #000;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+	.casilla {
+		border: 1px solid #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-			&:hover {
-				background-color: #f0f0f0;
-				cursor: pointer;
-			}
+		&:hover {
+			background-color: #f0f0f0;
+			cursor: pointer;
 		}
 	}
 }

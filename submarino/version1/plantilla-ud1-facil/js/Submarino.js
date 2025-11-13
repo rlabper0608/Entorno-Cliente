@@ -7,18 +7,23 @@ class Submarino {
 	}
 
 	init(size) {
-		this.x = 12;
-		this.y = 6;
+		this.x = 1;
+		this.y = 1;
+		console.log("Posicion inicial pasada por parametro");
 
 		// this.x = Math.floor(Math.random() * size);
 		// this.y = Math.floor(Math.random() * size);
 	}
 
 	mover(listaCeldas) {
-		let numRandom = Math.floor(Math.random() * listaCeldas.length) - 1;
+		let numRandom = Math.floor(Math.random() * listaCeldas.length);
+
+		console.log(listaCeldas.length);
+		console.log(numRandom);
+		console.log(listaCeldas[numRandom]);
 
 		let celda = listaCeldas[numRandom];
-
+		
 		// celda.valor = 7;
 		this.x = celda.x;
 		this.y = celda.y;
