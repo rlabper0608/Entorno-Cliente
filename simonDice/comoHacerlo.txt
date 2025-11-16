@@ -1,0 +1,7 @@
+Creo que deberia de usarse un array para ir guardando la secuencia que se va generando de manera aleatoria, pero es imporante "guardar" la generada anteriormeente, para que cuando se acierte, que no genere una nueva de 0, a este array hay que ir metiendole los nuevos colores, luego, deberiamos de tener un array para el usuario donde se va guardando los colores pulsados, pero este si debe de reinicirase cuando se termine la secuencia. 
+
+Tengo que meter que cada color se pueda clickar, que se encienda y se apague despues de un tiempo, al mostrar la secuencia, pero el usuario si deberia de poder clickar rapido los colores sin necesidad de esperar.
+
+No hace falta tomar todos los colores, para cambiarlos, hace falta, referenciarlos para luego subirle la opacidad y dar la sensación de "encendido" y luego de "apagado".
+
+Tengo que hacer un timeout para que se encienda el color durante dos segundos y luego se vuelva a apagar, pero esto no se debe de hacer cuando se pulse el color, cuando le toque al usuario introducir la secuencia. 
