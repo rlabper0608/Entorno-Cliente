@@ -1,0 +1,35 @@
+class Submarino {
+	constructor() {
+		this.x = 0;
+		this.y = 0;
+
+		console.log("El submarino se ha creado");
+	}
+
+	init(size) {
+		this.x = 1;
+		this.y = 1;
+		console.log("Posicion inicial pasada por parametro");
+
+		// this.x = Math.floor(Math.random() * size);
+		// this.y = Math.floor(Math.random() * size);
+	}
+
+	mover(listaCeldas) {
+		let numRandom = Math.floor(Math.random() * listaCeldas.length);
+
+		console.log(listaCeldas.length);
+		console.log(numRandom);
+		console.log(listaCeldas[numRandom]);
+
+		let celda = listaCeldas[numRandom];
+		
+		// celda.valor = 7;
+		this.x = celda.x;
+		this.y = celda.y;
+
+		console.log("El submarino se ha movido");
+	}
+}
+
+export { Submarino };

@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+html,
+body {
+	font-family: montserrat;
+}
+
+.menu {
+	margin-bottom: 2rem;
+
+	h1 {
+		text-align: center;
+	}
+
+	.sizes {
+		text-align: center;
+	}
+}
+
+#gameBoard {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2px;
+	background: #fff;
+
+	.casilla {
+		border: 1px solid #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			background-color: #f0f0f0;
+			cursor: pointer;
+		}
+	}
+}
+
+#status {
+	text-align: center;
+	margin-top: 2rem;
+	font-size: 1.5em;
+	font-weight: bold;
+}
