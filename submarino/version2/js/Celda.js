@@ -9,8 +9,8 @@ class Celda {
 	constructor(x, y) {
 		this.x = x;
 		this.y = y;
-		this.vecinos = [null, null, null, null];
 		this.valor = 0;
+		this.vecinos = [null, null, null, null];
 	}
 	nuevoVecino(direccion, celda) {
 		this.vecinos[direccion] = celda;

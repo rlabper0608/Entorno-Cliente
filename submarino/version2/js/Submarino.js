@@ -7,12 +7,9 @@ class Submarino {
 	}
 
 	init(size) {
-		this.x = 1;
-		this.y = 1;
+		this.x = Math.floor(Math.random() * size);
+		this.y = Math.floor(Math.random() * size);
 		console.log("Posicion inicial pasada por parametro");
-
-		// this.x = Math.floor(Math.random() * size);
-		// this.y = Math.floor(Math.random() * size);
 	}
 
 	mover(listaCeldas) {
@@ -24,7 +21,7 @@ class Submarino {
 
 		let celda = listaCeldas[numRandom];
 		
-		// celda.valor = 7;
+		celda.valor = 7;
 		this.x = celda.x;
 		this.y = celda.y;
 

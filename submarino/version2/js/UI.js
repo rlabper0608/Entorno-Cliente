@@ -13,11 +13,6 @@ export const UI = {
         UI.control.template = document.getElementById(domControl.template)
         UI.control.size = 5
     },
-    setEvent: (domControl) => {
-        // document.getElementById(domControl.clickCasilla[0]).addEventListener('click', ()=>{
-        //     domControl.clickCasilla[1]();
-        // });
-    },
     start(game) {
         UI.game = game;
         UI.control.status.textContent = "Juego iniciado";

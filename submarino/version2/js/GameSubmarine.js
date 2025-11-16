@@ -31,9 +31,20 @@ export class GameSubmarine {
 		// Esto encuentra la celda donde esta el submarino
 		let celdaSubmarino = this.array.find(
 			(item) => item.x === this.submarino.x && item.y === this.submarino.y
+			
 		);
 
+		let celdaDisparo = this.array.find(
+			(item) => item.x === disparoX && item.y === disparoY
+		);
+
+		this.array.forEach(element => {
+			if(element.valor != 0) {
+				element.valor -= 1;
+			}
+		});
+
 		this.submarino.mover(celdaSubmarino.vecinos.filter((item) => item != null));
-		this.UIControl.changeStatus("¡Agua!");
+		this.UIControl.changeStatus("¡Agua!" + "Rastro: " + celdaDisparo.valor);
 	}
 }
