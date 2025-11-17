@@ -1,0 +1,5 @@
+Tengo que separar las partes para separar el desarrollo del juego de la interfaz.
+
+Cambiar los dos setTimeout por un setInterval o algo mas eficiente que esto.
+
+Lo de los array para ir guardando la secuencia, supongo que se podra hacer de una manera mas optima tmb.

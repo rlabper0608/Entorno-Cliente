@@ -118,10 +118,12 @@ const aleatorio = () => {
 	console.log(numeroRandom);
 
 	let colorSeleccionado = colores[numeroRandom];
-    secuenciaColores.push(colorSeleccionado);
+	secuenciaColores.push(colorSeleccionado);
 
 	usarTecla.addTecla(document.getElementById(colorSeleccionado));
 };
+
+setEvent();
 
 const jugar = () => {
 	aleatorio();
@@ -130,20 +132,21 @@ const jugar = () => {
 
 /* Primero seria jugar una ronda unicamente, si hacierta volver a jugar, y si falla el juego termina */
 const compara = (secuenciaColoresF, usuarioF) => {
-    // Le permitimos clickar al usuario una vez que se llama a compara
-    setEvent();
+	// Le permitimos clickar al usuario una vez que se llama a compara
 	// La funcion array.every() se usa para verificar que los array sean iguales, le teneemos que pasar el valor(el color) y el indice es la posicion, y compara
-    console.log(secuenciaColoresF.every((valor, indice) => valor == usuarioF[indice]));
-    console.log(secuenciaColoresF);
-    console.log(usuarioF);
+	console.log(
+		secuenciaColoresF.every((valor, indice) => valor == usuarioF[indice])
+	);
+	console.log(secuenciaColoresF);
+	console.log(usuarioF);
 	if (
 		secuenciaColoresF.length === usuarioF.length &&
 		secuenciaColoresF.every((valor, indice) => valor === usuarioF[indice])
 	) {
 		console.log("Acertaste la secuencia, siguiente nivel");
-        usuario = [];
+		usuario = [];
 		jugar();
 	} else {
 		console.log("No has acertado, quieres volver a jugar?");
 	}
-}
+};
