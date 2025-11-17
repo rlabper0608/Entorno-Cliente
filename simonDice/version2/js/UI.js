@@ -1,4 +1,5 @@
 export const UI = {
+	game: null, 
 	control: {
 		red: null,
 		green: null,
@@ -6,6 +7,8 @@ export const UI = {
 		yellow: null,
 		secuencia: [],
 		colores: [],
+		secuenciaColores: [],
+		btn: null
 	},
 
 	init: (domControl) => {
@@ -13,11 +16,12 @@ export const UI = {
 		UI.control.green = document.getElementById(domControl.green);
 		UI.control.blue = document.getElementById(domControl.blue);
 		UI.control.yellow = document.getElementById(domControl.yellow);
+		UI.control.btn = document.getElementById(domControl.btn);
 		UI.control.colores = [
-			UI.control.red,
-			UI.control.blue,
-			UI.control.yellow,
-			UI.control.green,
+			domControl.red,
+			domControl.blue,
+			domControl.yellow,
+			domControl.green,
 		];
 	},
 	pulsarTecla: (conf) => {
@@ -36,16 +40,5 @@ export const UI = {
 		let colorSeleccionado = UI.control.colores[numeroRandom];
 
 		usarTecla.addTecla(document.getElementById(colorSeleccionado));
-	},
-	usarTecla: {
-		lista: [],
-		addTecla: (tecla) => {
-			usarTecla.lista.push({ tecla: tecla });
-			secuencia.push({ tecla: tecla });
-		},
-		start: () => {
-			let teclaPulsada = usarTecla.lista.shift();
-			if (teclaPulsada != undefined) pulsarTecla(teclaPulsada);
-		},
 	},
 };

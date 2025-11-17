@@ -5,38 +5,8 @@ UI.init({
 	green: "green",
 	blue: "blue",
 	yellow: "yellow",
+	btn: "btn",
 });
-
-// UI.usarTecla.start();
-
-// const pulsarTecla = (conf) => {
-//     conf.tecla.style.backgroundColor = conf.colorOn;
-//     setTimeout(() => {
-//         conf.tecla.style.backgroundColor = conf.colorOff;
-//         setTimeout(()=> {
-//             usarTecla.start();
-//         },2000)
-//     },2000)
-// }
-
-// const usarTecla = {
-//     lista: [],
-//     addTecla: (tecla, colorOn, colorOff) => {
-//         usarTecla.lista.push({tecla:tecla, colorOn:colorOn, colorOff:colorOff});
-//     },
-//     start: () => {
-//         let teclaPulsada = usarTecla.lista.pop();
-//         console.log(teclaPulsada);
-//         pulsarTecla(teclaPulsada);
-//     }
-// }
-
-// usarTecla.addTecla(document.getElementById("red"), "red", "blue");
-// usarTecla.addTecla(document.getElementById("red"), "yellow", "green");
-
-// usarTecla.start();
-
-// Mi forma (con opacidad)
 
 const colores = ["red", "blue", "yellow", "green"];
 
@@ -126,6 +96,7 @@ const aleatorio = () => {
 setEvent();
 
 const jugar = () => {
+	btn.hidden = true;
 	aleatorio();
 	usarTecla.start();
 };
@@ -147,6 +118,11 @@ const compara = (secuenciaColoresF, usuarioF) => {
 		usuario = [];
 		jugar();
 	} else {
+		secuenciaColores = [];
+		usuario = [];
+		secuencia = [];
+		btn.innerHTML = "Volver a jugar"
+		btn.hidden = false;
 		console.log("No has acertado, quieres volver a jugar?");
 	}
 };
