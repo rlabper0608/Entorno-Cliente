@@ -1,18 +1,40 @@
 export class game {
-    constructor() {
-        this.lista = [];
-    }
+	listButtons = [];
+	list = [];
+	secuencia = [];
+	constructor(UIControl) {
+		this.UIControl = UIControl;
+		this.UIControl.start(this);
+		this.listButtons = this.UIControl.listButtons;
+	}
 
-    usarTecla(secuencia, UI) {
+	aleatorio() {
+		console.log("aleatorio");
+		let numeroRandom = Math.floor(Math.random() * this.listButtons.length);
+		console.log(numeroRandom);
 
-		addTecla = (tecla) => {
-			this.lista.push({ tecla: tecla });
-			secuencia.push({ tecla: tecla });
+		let colorSeleccionado = listButtons[numeroRandom].color;
+		this.list.push(colorSeleccionado);
+	}
+
+	change(element, status) {
+		return new Promise((resolve) => {
+			console.log(element);
+			setTimeout(() => {
+				element.id.style.backgroundColor =
+					(status === this.UIControl.status.ON) ? element.colorOn : element.colorOff;
+				resolve(true);
+			}, 2000);
+		});
+	}
+
+	play() {
+		console.log("play");
+		this.UIControl.busy = true;
+		for (let item of this.list) {
+			this.change(this.listButtons[item], this.UIControl.status);
+			this.change(item, this.UIControl.status.OFF);
 		}
-
-		start = () => {
-			let teclaPulsada = this.lista.shift();
-			if (teclaPulsada != undefined) UI.pulsarTecla(teclaPulsada);
-		}
+		this.UIControl.busy = false;
 	}
 }
