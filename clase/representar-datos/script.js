@@ -1,34 +1,37 @@
-const consulta = () => {
-	fetch("https://jsonplaceholder.typicode.com/todos")
-		.then((response) => response.json())
-		.then((data) => {
+// const consulta = () => {
+// 	fetch("https://jsonplaceholder.typicode.com/todos")
+// 		.then((response) => response.json())
+// 		.then((data) => {
+// 			for (let datos of data) {
+// 				console.log(datos);
+// 				clonarFilas(datos);
+// 			}
+// 		});
+// };
 
-            for (let datos of data) {
-                console.log(datos);
-                clonarFilas(datos);
-            }
+// consulta();
+
+const consulta2 = () => {
+	fetch("https://jsonplaceholder.typicode.com/todos").then((response) => {
+		response.json().then((data) => {
+			console.log(data);
+			for (let datos of data) {
+				clonarFilas(datos);
+			}
 		});
+	});
 };
-
-consulta();
-
-const clonarCelda = (dato) => {
-	const padre = document.getElementById("fila");
-    const plantilla = document.getElementById("celda")
-    plantilla.innerText = dato;
-};
-
-// clonarCelda();
+consulta2();
 
 const clonarFilas = (datos) => {
-	const padre = document.getElementById("tabla");
-	const plantilla = document.getElementById("fila");
-	let clone = plantilla.cloneNode(true);
-    for (let key in datos) {
-        clonarCelda(datos[key]);
-        // console.log(datos[key]);
-    }
-	padre.appendChild(clone);
-};
+	const tabla = document.getElementById("tabla");
+	const plantilla = document.querySelector("#template");
+	console.log(datos)
+	const clone = plantilla.content.querySelector(".fila").cloneNode(true);
 
-// clonarFilas();
+	[...clone.children].forEach((item, index) => {
+		item.innerHTML = Object.values(datos[index]);
+	});
+
+	tabla.appendChild(clone);
+};

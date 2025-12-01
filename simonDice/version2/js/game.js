@@ -21,19 +21,19 @@ export class game {
 		return new Promise((resolve) => {
 			console.log(element);
 			setTimeout(() => {
-				element.id.style.backgroundColor =
+				element.color.style.backgroundColor =
 					(status === this.UIControl.status.ON) ? element.colorOn : element.colorOff;
 				resolve(true);
 			}, 2000);
 		});
 	}
 
-	play() {
+	async play () {
 		console.log("play");
 		this.UIControl.busy = true;
 		for (let item of this.list) {
-			this.change(this.listButtons[item], this.UIControl.status);
-			this.change(item, this.UIControl.status.OFF);
+			await this.change(this.listButtons[item], this.UIControl.status.ON);
+			await this.change(this.listButtons[item], this.UIControl.status.OFF);
 		}
 		this.UIControl.busy = false;
 	}
