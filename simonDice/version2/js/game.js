@@ -1,3 +1,5 @@
+import { animate } from 'animejs/animation';
+
 export class game {
 	listButtons = [];
 	list = [];
@@ -12,15 +14,12 @@ export class game {
 	aleatorio() {
 		console.log("aleatorio");
 		let numeroRandom = Math.floor(Math.random() * this.listButtons.length);
-		// console.log(numeroRandom);
 
 		this.list.push(numeroRandom);
-		// console.log(this.list);
 	}
 
 	change(element, status) {
 		return new Promise((resolve) => {
-			// console.log(element);
 			setTimeout(() => {
 				element.color.style.backgroundColor =
 					status === this.UIControl.status.ON
@@ -35,16 +34,14 @@ export class game {
 		console.log("play");
 		this.aleatorio();
 		this.UIControl.busy = true;
-		// this.removeEvent();
 
 		for (let item of this.list) {
 			await this.change(this.listButtons[item], this.UIControl.status.ON);
 			await this.change(this.listButtons[item], this.UIControl.status.OFF);
 		}
-
-		console.log("termine");
+		this.UIControl.message.hidden = true;
 		this.UIControl.busy = false;
-		// this.setEvent();
+		console.log("termine");
 	}
 
 	comprobar(secuencia, lista) {
@@ -60,6 +57,8 @@ export class game {
 			console.log("Secuencia Correcta");
 			this.secuenciaUsuario = [];
 			this.play();
+			this.UIControl.message.hidden = false;
+			this.UIControl.message.innerHTML = "Acertaste!";
 		} else {
 			console.log("Vas bien");
 		}
@@ -80,23 +79,12 @@ export class game {
 		}
 	}
 
-	removeEvent() {
-		if (this.UIControl.busy) {
-			this.listButtons.forEach((item, index) => {
-				// console.log(item);
-				// console.log(index);
-				item.color.removeEventListener("click", () => {
-					this.secuenciaUsuario.push(index);
-				});
-			});
-		}
-	}
-
 	reiniciar() {
 		console.log("reiniciar");
 		this.list = [];
 		this.secuenciaUsuario = [];
 		this.UIControl.busy = false;
 		this.UIControl.playButton.hidden = false;
+		this.UIControl.message.innerHTML = "Fallaste!";
 	}
 }

@@ -25,6 +25,9 @@ UI.init([
 	{
 		id: "btn"
 	},
+	{
+		id: "message"
+	},
 ]);
 
 const gameInstance = new game(UI);
