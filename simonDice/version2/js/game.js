@@ -1,4 +1,8 @@
-import { animate } from 'animejs/animation';
+import { animate } from "./node_modules/animejs/dist/bundles/anime.esm.js";
+
+const detector = await LanguageDetector.create({
+	expectedInputLanguages: ["en-US", "zh"],
+});
 
 export class game {
 	listButtons = [];

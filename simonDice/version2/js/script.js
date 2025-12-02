@@ -4,23 +4,23 @@ import { game } from "./game.js";
 UI.init([
 	{
 		color: "red",
-		colorOn: "#FF0000",
-		colorOff: "#f76565ff",
+		colorOn: "#fd2323ff",
+		colorOff: "rgb(177, 7, 7)",
 	},
 	{
 		color: "blue",
-		colorOn: "#1100ffff",
-		colorOff: "#776ef3ff",
+		colorOn: "#33b9f7ff",
+		colorOff: "rgb(16, 7, 143)",
 	},
 	{
 		color: "yellow",
-		colorOn: "#fbff00ff",
-		colorOff: "#f8fa86ff",
+		colorOn: "#f8fc30ff",
+		colorOff: "rgb(247, 193, 46)",
 	},
 	{
 		color: "green",
-		colorOn: "#00ff00ff",
-		colorOff: "#77f577ff",
+		colorOn: "#32ff32ff",
+		colorOff: "rgb(4, 121, 4)",
 	},
 	{
 		id: "btn"
