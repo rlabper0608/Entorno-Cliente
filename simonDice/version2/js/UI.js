@@ -10,6 +10,7 @@ export const UI = {
 
 	init: (configButtons) => {
         UI.listButtons = configButtons;
+        UI.playButton = document.getElementById(UI.listButtons.pop().id);
         UI.listButtons.forEach((item) => {
             item.color = document.getElementById(item.color);
         });
@@ -21,9 +22,5 @@ export const UI = {
 
     setList: (list) => {
         UI.game.list = list;
-    },
-
-    restart() {
-
     },
 };

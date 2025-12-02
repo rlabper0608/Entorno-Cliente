@@ -6,6 +6,7 @@ export class game {
 		this.UIControl = UIControl;
 		this.UIControl.start(this);
 		this.listButtons = this.UIControl.listButtons;
+		this.setEvent();
 	}
 
 	aleatorio() {
@@ -32,20 +33,18 @@ export class game {
 
 	async play() {
 		console.log("play");
-		// console.log(this.listButtons);
 		this.aleatorio();
 		this.UIControl.busy = true;
-		this.removeEvent();
+		// this.removeEvent();
 
 		for (let item of this.list) {
-			// console.log(item);
 			await this.change(this.listButtons[item], this.UIControl.status.ON);
 			await this.change(this.listButtons[item], this.UIControl.status.OFF);
 		}
 
 		console.log("termine");
 		this.UIControl.busy = false;
-		this.setEvent();
+		// this.setEvent();
 	}
 
 	comprobar(secuencia, lista) {
@@ -60,11 +59,9 @@ export class game {
 		if (lista.length === secuencia.length) {
 			console.log("Secuencia Correcta");
 			this.secuenciaUsuario = [];
-			console.log(this.secuenciaUsuario);
 			this.play();
 		} else {
 			console.log("Vas bien");
-			
 		}
 	}
 
@@ -100,6 +97,6 @@ export class game {
 		this.list = [];
 		this.secuenciaUsuario = [];
 		this.UIControl.busy = false;
-		this.removeEvent();
+		this.UIControl.playButton.hidden = false;
 	}
 }

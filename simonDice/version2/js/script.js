@@ -22,6 +22,9 @@ UI.init([
 		colorOn: "#00ff00ff",
 		colorOff: "#77f577ff",
 	},
+	{
+		id: "btn"
+	},
 ]);
 
 const gameInstance = new game(UI);
