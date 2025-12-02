@@ -6,6 +6,7 @@ export const UI = {
 		OFF: 0,
 	},
 	listButtons: [],
+    playButton: null,
 
 	init: (configButtons) => {
         UI.listButtons = configButtons;
@@ -18,11 +19,11 @@ export const UI = {
         UI.game = game;
     },
 
-    // setEvent: () =>  {
-    //     document.getElementById("btn").addEventListener("click", );
-    // },
-
     setList: (list) => {
         UI.game.list = list;
-    }
+    },
+
+    restart() {
+
+    },
 };
