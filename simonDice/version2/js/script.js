@@ -1,6 +1,11 @@
 import { UI } from "./UI.js";
 import { game } from "./game.js";
-
+// import { animate } from "./node_modules/animejs/dist/bundles/anime.esm.js";
+import {
+	animate,
+	splitText,
+	stagger,
+} from "./node_modules/animejs/dist/bundles/anime.esm.js";
 UI.init([
 	{
 		color: "red",
@@ -23,18 +28,19 @@ UI.init([
 		colorOff: "rgb(4, 121, 4)",
 	},
 	{
-		id: "btn"
+		id: "btn",
 	},
 	{
-		id: "message"
+		id: "message",
 	},
+	{
+		id: "hablar"
+	}
 ]);
 
 const gameInstance = new game(UI);
 
-// UI.setList([0, 1, 1, 2, 0, 3]);
-
 document.getElementById("btn").addEventListener("click", () => {
-    gameInstance.play();
-    document.getElementById("btn").hidden = true;
+	gameInstance.play();
+	document.getElementById("btn").hidden = true;
 });

@@ -6,23 +6,26 @@ export const UI = {
 		OFF: 0,
 	},
 	listButtons: [],
-    playButton: null,
-    message: null,
+	playButton: null,
+	message: null,
+	btnHablar: null,
+	recognition: new SpeechRecognition(),
 
 	init: (configButtons) => {
-        UI.listButtons = configButtons;
-        UI.message = document.getElementById(UI.listButtons.pop().id);
-        UI.playButton = document.getElementById(UI.listButtons.pop().id);
-        UI.listButtons.forEach((item) => {
-            item.color = document.getElementById(item.color);
-        });
-    },
+		UI.listButtons = configButtons;
+		UI.btnHablar = document.getElementById(UI.listButtons.pop().id);
+		UI.message = document.getElementById(UI.listButtons.pop().id);
+		UI.playButton = document.getElementById(UI.listButtons.pop().id);
+		UI.listButtons.forEach((item) => {
+			item.color = document.getElementById(item.color);
+		});
+	},
 
-    start(game) {
-        UI.game = game;
-    },
+	start(game) {
+		UI.game = game;
+	},
 
-    setList: (list) => {
-        UI.game.list = list;
-    },
+	setList: (list) => {
+		UI.game.list = list;
+	},
 };
