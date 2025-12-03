@@ -6,6 +6,7 @@ import {
 	splitText,
 	stagger,
 } from "./node_modules/animejs/dist/bundles/anime.esm.js";
+
 UI.init([
 	{
 		color: "red",
@@ -34,8 +35,8 @@ UI.init([
 		id: "message",
 	},
 	{
-		id: "hablar"
-	}
+		id: "hablar",
+	},
 ]);
 
 const gameInstance = new game(UI);
@@ -43,4 +44,18 @@ const gameInstance = new game(UI);
 document.getElementById("btn").addEventListener("click", () => {
 	gameInstance.play();
 	document.getElementById("btn").hidden = true;
+	document.getElementById("hablar").hidden = false;
 });
+const { chars } = splitText("h1", {
+	chars: { wrap: "clip" },
+});
+
+animate(chars, {
+	y: [{ to: ["100%", "0%"] }, { to: "-100%", delay: 750, ease: "in(3)" }],
+	duration: 750,
+	ease: "out(3)",
+	delay: stagger(50),
+	loop: true,
+});
+
+this.UIControl.message.innerHTML = chars.text;

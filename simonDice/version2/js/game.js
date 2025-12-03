@@ -1,9 +1,4 @@
-// import { animate } from "./node_modules/animejs/dist/bundles/anime.esm.js";
-import {
-	animate,
-	splitText,
-	stagger,
-} from "./node_modules/animejs/dist/bundles/anime.esm.js";
+
 
 // Uso de la API para el reconocimiento de voz
 
