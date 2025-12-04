@@ -57,5 +57,3 @@ animate(chars, {
 	delay: stagger(50),
 	loop: true,
 });
-
-this.UIControl.message.innerHTML = chars.text;

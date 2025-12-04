@@ -8,9 +8,9 @@
 
 .wrapper {
     display:flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 3rem;
 
     .row {
         display: flex;
@@ -65,4 +65,10 @@
         font-size: 4rem;
         font-family: Montserrat, sans-serif;
     }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

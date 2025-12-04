@@ -1,49 +1,8 @@
-
-
 // Uso de la API para el reconocimiento de voz
 
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechRecognitionEvent =
 	SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
-
-var colors = ["blue", "green", "red", "yellow"];
-
-// let recognition = new SpeechRecognition();
-
-// recognition.continuous = false;
-// recognition.lang = "en-US";
-// recognition.interimResults = false;
-// recognition.maxAlternatives = 1;
-
-// recognition.onspeechend = function () {
-// 	recognition.stop();
-// };
-
-// recognition.onnomatch = function (event) {
-// 	diagnostic.textContent = "I didn't recognise that color.";
-// };
-
-// recognition.onerror = function (event) {
-// 	diagnostic.textContent = "Error occurred in recognition: " + event.error;
-// };
-
-// recognition.onresult = function (event) {
-// 	const color = event.results[0][0].transcript;
-
-// 	if (color == "red") {
-// 		this.secuenciaUsuario.push(0);
-// 	} else if (color == "blue") {
-// 		this.secuenciaUsuario.push(1);
-// 	} else if (color == "yellow") {
-// 		this.secuenciaUsuario.push(2);
-// 	} else if (color == "green") {
-// 		this.secuenciaUsuario.push(3);
-// 	}
-
-// 	diagnostic.textContent = "Result received: " + color + ".";
-// 	bg.style.backgroundColor = color;
-// 	console.log("Confidence: " + event.results[0][0].confidence);
-// };
 
 export class game {
 	listButtons = [];
@@ -59,6 +18,7 @@ export class game {
 		this.setEvent();
 		this.secuenciaUsuario = [];
 
+		// Configuracion API reconocimiento de voz
 		this.recognition = new SpeechRecognition();
 
 		this.recognition.continuous = false;
@@ -75,7 +35,6 @@ export class game {
 			console.log("Color dicho: " + this.colorHablado);
 			this.transformarColor(this.colorHablado);
 		};
-		
 	}
 
 	transformarColor(color) {
@@ -171,20 +130,7 @@ export class game {
 		this.secuenciaUsuario = [];
 		this.UIControl.busy = false;
 		this.UIControl.playButton.hidden = false;
+		this.UIControl.btnHablar.hidden = true;
 		this.UIControl.message.innerHTML = "Fallaste!";
-
-		// const { chars } = splitText("this.UIControl.message", {
-		// 	chars: { wrap: "clip" },
-		// });
-
-		// animate(chars, {
-		// 	y: [{ to: ["100%", "0%"] }, { to: "-100%", delay: 750, ease: "in(3)" }],
-		// 	duration: 750,
-		// 	ease: "out(3)",
-		// 	delay: stagger(50),
-		// 	loop: true,
-		// });
-
-		// this.UIControl.message.innerHTML = chars.text;
 	}
 }
