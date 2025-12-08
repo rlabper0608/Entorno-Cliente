@@ -1,12 +1,14 @@
 import { UI } from "./UI.js";
-import { game } from "./game.js";
+import { game } from "./SimonGame.js";
 // import { animate } from "./node_modules/animejs/dist/bundles/anime.esm.js";
 import {
 	animate,
 	splitText,
 	stagger,
-} from "./node_modules/animejs/dist/bundles/anime.esm.js";
+} from "../libs/node_modules/animejs/dist/bundles/anime.esm.js";
 
+
+// Paso el objeto de configuración todo lo que voy a utilizar
 UI.init([
 	{
 		color: "red",

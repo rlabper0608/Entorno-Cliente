@@ -1,0 +1,47 @@
+import { UI } from "./UI.js";
+
+UI.init([
+	{
+		union: "wrapper",
+		btn: "send",
+		title: "FormularioA",
+		action: "",
+		method: "POST",
+	},
+	{
+        tag: "input",
+		type: "text",
+        id:"nombre",
+        class:"form-control",
+		name: "nombre",
+        min: 1,
+        max: 60,
+        value: "",
+        required: true,
+        placeholder: "Añade tu nombre",
+	},
+    {
+        tag: "input",
+		type: "text",
+        id:"nombre",
+        class:"form-control",
+		name: "nombre",
+        min: 1,
+        max: 60,
+        value: "",
+        required: true,
+        placeholder: "Añade tu nombre",
+	},
+    {
+        tag: "input",
+		type: "text",
+        id:"nombre",
+        class:"form-control",
+		name: "nombre",
+        min: 1,
+        max: 60,
+        value: "",
+        required: true,
+        placeholder: "Añade tu nombre",
+	},
+]);
